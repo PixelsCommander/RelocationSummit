@@ -6,23 +6,24 @@
     <div class="tickets-grid">
       {% set tickets = [
         {
-          title: "Первый батч",
-          price: "€20",
+          title: "Regular",
+          price: "250",
           icon: 'diamond',
-          buttonLink: '#'
+          buttonPlaceholder: 'С 1 января'
+
         }, {
-          title: "Второй батч",
-          price: "€300",
+          title: "Early bird",
+          price: "180",
           icon: 'fire',
-          buttonPlaceholder: 'С 11 ноября'
+          buttonLink: 'https://www.eventbrite.com/e/entradas-relocation-summit-2026-1638440241869?aff=oddtdtcreator'
         }, {
-          title: "VIP",
+          title: "Бизнес",
           price: "€800",
           icon: 'crown',
           description: [
             "+ Нетворкинг ужин", "+ Регистрация без очереди", "+ Выступление в питч вечере"
           ],
-          buttonLink: '#'
+          buttonLink: 'https://www.eventbrite.com/e/entradas-relocation-summit-2026-1638440241869?aff=oddtdtcreator'
         }
       ] %}
       {% for ticket in tickets %}
