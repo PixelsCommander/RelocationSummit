@@ -1,4 +1,162 @@
 @use "../helpers/media";
 
+.topics-container {
+  display: grid;
+  gap: 8px;
+
+  @include media.md-down {
+    padding: 0 var(--container-padding-x);
+  }
+  @include media.md-up {
+    gap: 22px;
+  }
+  @include media.xl-up {
+    gap: 28px;
+  }
+}
+
+.embla {
+  &_topics {
+    &.embla {
+      width: 100%;
+      overflow: hidden;
+
+      .embla {
+        &__container {
+          @include media.md-down {
+            display: grid;
+            gap: 8px;
+          }
+          @include media.md-up {
+            display: flex;
+            will-change: transform;
+            gap: 22px;
+            padding: 0 22px;
+          }
+          @include media.xl-up {
+            gap: 28px;
+            padding: 0 28px;
+          }
+        }
+        &__slide {
+          @include media.md-down {
+            width: 100%;
+          }
+          @include media.md-up {
+            width: 518px;
+            flex: 0 0 auto;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+          }
+          @include media.xl-up {
+            width: 606px;
+          }
+
+          .topic {
+            flex: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
 .topic {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 18px 24px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(29px);
+  background-color: var(--bg-color-glass);
+  text-decoration: none;
+  color: var(--font-color-base);
+  transition: all var(--transition-default);
+
+  @include media.xs-up {
+    padding: 18px 28px;
+  }
+  @include media.md-up {
+    gap: 23px;
+    padding: 28px 28px 25px;
+    min-height: 230px;
+  }
+  @include media.xl-up {
+    gap: 24px;
+    padding: 32px;
+    min-height: 260px;
+  }
+
+  &:hover {
+    backdrop-filter: blur(50px);
+
+    .topic {
+      &__arrow {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    line-height: 1.2;
+    color: var(--primary-color);
+
+    @include media.xs-up {
+      font-size: 20px;
+    }
+    @include media.md-up {
+      font-size: 30px;
+    }
+    @include media.xl-up {
+      font-size: 38px;
+      line-height: 1.1;
+    }
+  }
+  &__bottom {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+
+    @include media.md-down {
+      display: none;
+    }
+  }
+  &__arrow {
+    opacity: 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 4px 8px 0;
+    transition: opacity var(--transition-default);
+  }
+  &__speaker {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  &__avatar {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 17px;
+
+    @include media.md-up {
+      width: 44px;
+      height: 44px;
+      margin-right: 20px;
+    }
+  }
+  &__name {
+    font-size: 16px;
+    line-height: 1.2;
+
+    @include media.xl-up {
+      font-size: 18px;
+    }
+  }
 }

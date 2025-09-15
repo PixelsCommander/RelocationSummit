@@ -1,10 +1,4 @@
-<section class="section section_tickets" id="tickets">
-  <div class="container">
-    <div class="section__caption">
-      <h2 class="title">Билеты</h2>
-    </div>
-    <div class="tickets-grid">
-      {% set tickets = [
+{% set tickets = [
         {
           title: "Regular",
           price: "€250",
@@ -26,9 +20,20 @@
           buttonLink: 'https://www.eventbrite.com/e/entradas-relocation-summit-2026-1638440241869?aff=oddtdtcreator'
         }
       ] %}
-      {% for ticket in tickets %}
-        {% include "ticket-item.njk" %}
-      {% endfor %}
+
+<section class="section section_tickets" id="tickets">
+  <div class="container">
+    <div class="section__caption">
+      <h2 class="title">Билеты</h2>
+    </div>
+    <div class="embla embla_tickets">
+      <div class="embla__container">
+        {% for ticket in tickets %}
+          <div class="embla__slide">
+            {% include "ticket-item.njk" %}
+          </div>
+        {% endfor %}
+      </div>
     </div>
   </div>
 </section>

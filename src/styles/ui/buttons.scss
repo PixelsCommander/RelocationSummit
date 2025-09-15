@@ -16,25 +16,37 @@
   font-size: 14px;
   line-height: 1.2;
   text-transform: uppercase;
-  transition: background-color var(--transition-default);
+  transition: all var(--transition-default);
 
   @include media.sm-up {
     min-height: 70px;
-    min-width: 258px;
+    min-width: 200px;
     padding: 15px 50px;
     border-radius: 12px;
     font-size: 16px;
   }
 
   &:hover {
-    background-color: var(--primary-color-dark);
+    background-color: var(--white);
   }
 
   &_secondary {
     background-color: var(--white);
 
     &:hover {
-      background-color: var(--white-dark);
+      background-color: var(--primary-color);
+    }
+  }
+  &_outline {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.01);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+
+    &:hover {
+      background-color: var(--white);
+      color: var(--black);
+      border-color: var(--white);
     }
   }
 }
@@ -54,7 +66,7 @@
 
   @include media.sm-up {
     min-height: 70px;
-    min-width: 258px;
+    min-width: 200px;
     padding: 15px 50px;
     border-radius: 12px;
     font-size: 16px;

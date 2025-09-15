@@ -1,7 +1,48 @@
-<section class="section" id="location">
-  <div class="container">
-    <div class="section__caption">
-      <h2 class="title">Локация</h2>
+{% set locationImages = [
+  {
+    desktop: "location-barcelona_01",
+    mobile: "location-barcelona_01_mob",
+    alt: "Fira Barcelona - Главный вход"
+  },
+  {
+    desktop: "location-barcelona_02",
+    mobile: "location-barcelona_02_mob",
+    alt: "Fira Barcelona - Интерьер"
+  }
+] %}
+
+<section class="section section_location" id="location">
+  <div class="location">
+    <div class="location__carousel embla embla_location">
+      <div class="embla__container">
+        {% for image in locationImages %}
+          <div class="embla__slide">
+            <picture>
+              <source media="(max-width: 430px)" srcset="assets/img/{{ image.mobile }}.webp">
+              <img class="location__image" src="assets/img/{{ image.desktop }}.webp" alt="{{ image.alt }}" loading="lazy">
+            </picture>
+          </div>
+        {% endfor %}
+      </div>
+      <button class="embla__button embla__button_prev" type="button">
+        {{ svgIcon("arrow.svg") | safe }}
+        <span class="embla__sr-only">Назад</span>
+      </button>
+      <button class="embla__button embla__button_next" type="button">
+        {{ svgIcon("arrow.svg") | safe }}
+        <span class="embla__sr-only">Вперёд</span>
+      </button>
+    </div>
+    <div class="location__inner container">
+      <div class="location__logo">
+        {{ svgIcon("fira-barcelona.svg") | safe }}
+      </div>
+      <div class="location__info">
+        <address class="location__address">Carrer de la Font del Mont, 51, Barcelona</address>
+        <div class="location__button">
+          <a href="#" target="_blank" class="btn">Показать на карте</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>

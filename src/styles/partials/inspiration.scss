@@ -1,25 +1,67 @@
 @use "../helpers/media";
 
-.swiper {
+.embla {
   &_inspirations {
-    &.swiper {
+    &.embla {
+      overflow: hidden;
+
       @include media.lg-down {
         margin: 0 calc(-1 * var(--container-padding-x));
-        padding: 0 calc(var(--container-padding-x) + 19px) 0
-          var(--container-padding-x);
+      }
+
+      .embla {
+        &__container {
+          display: flex;
+          will-change: transform;
+
+          @include media.lg-down {
+            padding: 0 var(--container-padding-x);
+          }
+          @include media.lg-up {
+            gap: 22px;
+          }
+        }
+        &__slide {
+          display: flex;
+          flex-direction: column;
+          min-width: 0;
+          flex: 1;
+
+          @include media.lg-down {
+            flex: 0 0 47%;
+          }
+          @include media.md-down {
+            flex-basis: 94%;
+          }
+
+          &:not(:first-child) {
+            @include media.lg-down {
+              flex-basis: calc(47% + var(--container-padding-x));
+              padding-left: var(--container-padding-x);
+              margin-left: -10px;
+            }
+            @include media.md-down {
+              flex-basis: calc(94% + var(--container-padding-x));
+            }
+          }
+
+          &:last-child {
+            @include media.lg-down {
+              margin-right: var(--container-padding-x);
+            }
+          }
+
+          .inspiration {
+            flex: 1;
+            user-select: none;
+          }
+        }
       }
     }
-  }
-
-  .swiper-slide {
-    display: flex;
-    flex-direction: column;
-    height: auto;
   }
 }
 
 .inspiration {
-  flex: 1;
   position: relative;
   border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
@@ -28,11 +70,14 @@
   &__top {
     position: relative;
     height: 326px;
-    padding: 0 28px;
+    padding: 0 24px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 
+    @include media.xs-up {
+      padding: 0 28px;
+    }
     @include media.phone-up {
       height: 354px;
     }
@@ -61,12 +106,15 @@
   }
   &__title {
     position: relative;
-    font-size: 27px;
+    font-size: 24px;
     line-height: 1.1;
     font-weight: 800;
     color: var(--font-color-accent);
     z-index: 1;
 
+    @include media.xs-up {
+      font-size: 27px;
+    }
     @include media.phone-up {
       font-size: 30px;
     }
@@ -78,17 +126,24 @@
     }
   }
   &__content {
-    padding: 18px 28px 28px;
+    padding: 15px 24px 24px;
 
+    @include media.xs-up {
+      padding: 18px 28px 28px;
+    }
     @include media.xxl-up {
       padding: 17px 40px 36px;
     }
   }
   &__text {
-    font-size: 14px;
-    line-height: 1.7;
+    font-size: 13px;
+    line-height: 1.6;
     font-weight: 500;
 
+    @include media.xs-up {
+      font-size: 14px;
+      line-height: 1.7;
+    }
     @include media.phone-up {
       font-size: 16px;
       line-height: 1.6;

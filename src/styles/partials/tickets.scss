@@ -1,23 +1,72 @@
 @use "../helpers/media";
 
-.tickets-grid {
-  display: grid;
-  gap: 8px;
-  max-width: 986px;
-  margin: 0 auto;
+.embla {
+  &_tickets {
+    &.embla {
+      @media (min-width: 576px) and (max-width: 991px) {
+        overflow: hidden;
+        margin: 0 calc(-1 * var(--container-padding-x));
+      }
 
-  @include media.phone-up {
-    grid-template-columns: 324px;
-    justify-content: center;
-  }
-  @include media.lg-up {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  @include media.xl-up {
-    gap: 22px;
-  }
-  @include media.xxl-up {
-    gap: 28px;
+      .embla {
+        &__container {
+          display: grid;
+          gap: 8px;
+
+          @media (min-width: 576px) and (max-width: 991px) {
+            display: flex;
+            gap: 0;
+            padding: 0 var(--container-padding-x);
+          }
+          @include media.lg-up {
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 986px;
+            margin: 0 auto;
+            gap: 22px;
+          }
+          @include media.xxl-up {
+            gap: 28px;
+          }
+        }
+        &__slide {
+          @media (min-width: 701px) and (max-width: 991px) {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            flex: 1;
+            flex: 0 0 47%;
+          }
+          @media (min-width: 576px) and (max-width: 700px) {
+            flex: 0 0 94%;
+          }
+
+          &:not(:first-child) {
+            @media (min-width: 576px) and (max-width: 991px) {
+              flex-basis: calc(47% + var(--container-padding-x));
+              padding-left: var(--container-padding-x);
+              margin-left: -10px;
+            }
+            @media (min-width: 576px) and (max-width: 700px) {
+              flex-basis: calc(94% + var(--container-padding-x));
+            }
+          }
+
+          &:last-child {
+            @media (min-width: 576px) and (max-width: 991px) {
+              margin-right: var(--container-padding-x);
+            }
+          }
+
+          .ticket {
+            height: 100%;
+
+            @media (min-width: 576px) and (max-width: 991px) {
+              user-select: none;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -28,8 +77,14 @@
   padding: 40px 8px 8px;
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
-  backdrop-filter: blur(34px);
-  background: rgba(255, 255, 255, 0.04);
+  background-color: var(--bg-color-glass);
+  transition: transform var(--transition-default);
+
+  &:hover {
+    @include media.lg-up {
+      transform: scale(1.05);
+    }
+  }
 
   &__title {
     font-size: 20px;
@@ -61,7 +116,6 @@
 
     @include media.lg-up {
       gap: 0;
-      margin-bottom: 38px;
     }
     @include media.xl-up {
       margin-bottom: 45px;
@@ -81,8 +135,6 @@
     svg {
       max-height: 100%;
     }
-  }
-  &__list {
   }
   &__list-item {
     font-size: 16px;

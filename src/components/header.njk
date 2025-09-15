@@ -1,26 +1,28 @@
 <header class="header">
   <nav class="header__nav" role="navigation">
+    <a href="/" class="header__logo" aria-label="Re:Location IT Summit">
+      {{ svgIcon("logo.svg") | safe }}
+    </a>
     <ul class="header__nav-list">
       <li class="header__nav-item">
         <a href="#about" class="header__nav-link">О мероприятии</a>
       </li>
       <li class="header__nav-item">
-        <a href="#tickets" class="header__nav-link">Билеты</a>
-      </li>
-      {# <li class="header__nav-item">
         <a href="#speakers" class="header__nav-link">Докладчики</a>
       </li>
       <li class="header__nav-item">
-        <a href="#schedule" class="header__nav-link">Расписание</a>
+        <a href="#tickets" class="header__nav-link">Билеты</a>
       </li>
-
       <li class="header__nav-item">
         <a href="#location" class="header__nav-link">Локация</a>
       </li>
       <li class="header__nav-item">
         <a href="#sponsors" class="header__nav-link">Спонсоры</a>
-      </li> #}
+      </li>
     </ul>
+    <div class="header__nav-btn">
+      <a href="#tickets" class="btn">Купить билет</a>
+    </div>
   </nav>
   <button class="header__burger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
     <span class="header__burger-line header__burger-line_top" aria-hidden="true"></span>
@@ -30,7 +32,7 @@
   <div class="header__right">
     <div class="header__support">
       При поддержке
-      <a href="https://t.me/bcn_ithub" class="header__support-link">BCN It Hub</a>
+      <a href="https://t.me/bcn_ithub" class="header__support-link" target="_blank">BCN IT Hub</a>
     </div>
   </div>
 </header>
