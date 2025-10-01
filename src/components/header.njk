@@ -7,17 +7,17 @@
       <li class="header__nav-item">
         <a href="#about" class="header__nav-link">О мероприятии</a>
       </li>
-      {#<li class="header__nav-item">
-        <a href="#speakers" class="header__nav-link">Докладчики</a>
-      </li>#}
-      {#<li class="header__nav-item">
-        <a href="#location" class="header__nav-link">Локация</a>
-      </li>#}
-      {#<li class="header__nav-item">
-        <a href="#sponsors" class="header__nav-link">Спонсоры</a>
-      </li>#}
       <li class="header__nav-item">
-        <a href="#tickets" class="header__nav-link">Купить билет</a>
+        <a href="#speakers" class="header__nav-link">Докладчики</a>
+      </li>
+      <li class="header__nav-item">
+        <a href="#tickets" class="header__nav-link">Билеты</a>
+      </li>
+      <li class="header__nav-item">
+        <a href="#location" class="header__nav-link">Локация</a>
+      </li>
+      <li class="header__nav-item">
+        <a href="#sponsors" class="header__nav-link">Спонсоры</a>
       </li>
     </ul>
     <div class="header__nav-btn">
@@ -32,7 +32,9 @@
   <div class="header__right">
     <div class="header__support">
       При поддержке
-      <a href="https://t.me/bcn_ithub" class="header__support-link" target="_blank">BCN IT Hub</a>
+      <a href="https://t.me/bcn_ithub" class="header__support-link" target="_blank" aria-label="BCN IT HUB">
+        {{ svgIcon("bcn-it-hub.svg") | safe }}
+      </a>
     </div>
   </div>
 </header>

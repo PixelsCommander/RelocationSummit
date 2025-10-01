@@ -577,7 +577,10 @@ body {
   }
 }
 .header__support {
+  display: flex;
+  align-items: center;
   font-size: 12px;
+  font-weight: 400;
 }
 @media (min-width: 576px) {
   .header__support {
@@ -585,13 +588,17 @@ body {
   }
 }
 .header__support-link {
-  text-transform: uppercase;
-  font-weight: 600;
-  color: var(--font-color-base);
-  transition: color var(--transition-default);
+  display: inline-flex;
+  margin: 0.175em 0 0 0.625em;
 }
-.header__support-link:hover {
-  color: var(--primary-color);
+@media (max-width: 575.98px) {
+  .header__support-link {
+    margin-top: 0.1em;
+  }
+  .header__support-link svg {
+    height: 22px;
+    width: auto;
+  }
 }
 @media (max-width: 991.98px) {
   .header__burger {
