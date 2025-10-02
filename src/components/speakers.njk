@@ -1,120 +1,21 @@
-{% set speakers = [
-  {
-    id: "speaker-anton-kortunov",
-    name: "Антон Кортунов",
-    company: "Hardware, Нидерланды",
-    topic: "Доклад: Как вложиться в недвижимость и не пожалеть?",
+{% set speakers = [{
+                       id: "speaker-aleks-solovyov",
+                       name: "Александр Соловьев",
+                       company: "Refocus, Испания",
+                       topic: "Постоянный герой страниц Forbes, 15 млн $ выручки в первый год работы стартапа",
+                       image: "speaker_02",
+                       social: [
+                         { name: "тг", label: "Телеграм", url: "https://t.me/solokumi" }
+                       ]
+                     },
+{
+    id: "speaker-anna-znamenskaya",
+    name: "Анна Знаменская",
+    company: "Карьерный консультант, Испания",
+    topic: "Топ менеджер с 20 летним стажем, работала в Apple, Viber, Tinkoff, Beeline, Ivi. Доклад: Из СНГ в FAANG - как построить IT карьеру в Европе? ",
     image: "speaker_01",
     social: [
-      { name: "икс", label: "Икс", url: "#" },
-      { name: "инст", label: "Инстаграм", url: "#" }
-    ]
-  },
-  {
-    id: "speaker-anastasiya-abrashitova",
-    name: "Анастасия Абрашитова",
-    company: "Walmart, Испания",
-    topic: "Доклад: Аренда - обзор рынка Европы",
-    image: "speaker_02",
-    social: [
-      { name: "инст", label: "Инстаграм", url: "#" }
-    ]
-  },
-  {
-    id: "speaker-david-martirosyan",
-    name: "Давид Мартиросян",
-    company: "DeWalt, Германия",
-    topic: "Доклад: Поиск работы и занятости",
-    image: "speaker_03",
-    social: [
-      { name: "икс", label: "Икс", url: "#" },
-      { name: "инст", label: "Инстаграм", url: "#" },
-      { name: "тик", label: "Тикток", url: "#" }
-    ]
-  },
-  {
-    id: "speaker-viktor-voronin",
-    name: "Виктор Воронин",
-    company: "Software, Франция",
-    topic: "Доклад: Обзор типичных налоговых оптимизаций",
-    image: "speaker_04",
-    social: [
-      { name: "икс", label: "Икс", url: "#" }
-    ]
-  },
-  {
-    id: "speaker-angelina-chizh",
-    name: "Ангелина Чиж",
-    company: "Hardware, Нидерланды",
-    topic: "Доклад: Поиск друзей и отношений",
-    image: "speaker_05",
-    social: [
-      { name: "икс", label: "Икс", url: "#" },
-      { name: "инст", label: "Инстаграм", url: "#" }
-    ]
-  },
-  {
-    id: "speaker-stanislav-lem",
-    name: "Станислав Лем",
-    company: "Sol, Аргентина",
-    topic: "Доклад: Обзор европейских систем налогообложения",
-    image: "speaker_06",
-    social: [
-      { name: "икс", label: "Икс", url: "#" },
-      { name: "инст", label: "Инстаграм", url: "#" }
-    ]
-  },
-  {
-    id: "speaker-nikolai-grishin",
-    name: "Николай Гришин",
-    company: "Corona Extra, Италия",
-    topic: "Доклад: Инвестиции в недвижимость: где, как и зачем?",
-    image: "speaker_07",
-    social: [
-      { name: "икс", label: "Икс", url: "#" },
-      { name: "инст", label: "Инстаграм", url: "#" }
-    ]
-  },
-  {
-    id: "speaker-aleksei-sannikov",
-    name: "Алексей Санников",
-    company: "Hardware, Нидерланды",
-    topic: "Доклад: Получение гражданства",
-    image: "speaker_08",
-    social: [
-      { name: "инст", label: "Инстаграм", url: "#" }
-    ]
-  },
-  {
-    id: "speaker-anton-kortunov-2",
-    name: "Антон Кортунов",
-    company: "Hardware, Германия",
-    topic: "Доклад: Поиск работы и занятости",
-    image: "speaker_09",
-    social: [
-      { name: "икс", label: "Икс", url: "#" }
-    ]
-  },
-  {
-    id: "speaker-anastasiya-abrashitova-2",
-    name: "Анастасия Абрашитова",
-    company: "Burzum, Норвегия",
-    topic: "Доклад: Обзор систем налогообложения",
-    image: "speaker_10",
-    social: [
-      { name: "инст", label: "Инстаграм", url: "#" }
-    ]
-  },
-  {
-    id: "speaker-david-martirosyan-2",
-    name: "Давид Мартиросян",
-    company: "Hardware, Нидерланды",
-    topic: "Доклад: Инвестиции в Недвижимость: где, как и зачем?",
-    image: "speaker_11",
-    social: [
-      { name: "икс", label: "Икс", url: "#" },
-      { name: "инст", label: "Инстаграм", url: "#" },
-      { name: "тик", label: "Тикток", url: "#" }
+      { name: "инст", label: "Инстаграм", url: "https://www.instagram.com/annaznamenskaya/" }
     ]
   }
 ] %}
@@ -125,6 +26,18 @@
       <h2 class="title">Наши эксперты</h2>
     </div>
     <div class="speakers-grid">
+    <div class="suggest">
+            <div class="suggest__content">
+              <h4 class="suggest__title">
+                Есть о чем рассказать?</h4>
+              <div class="suggest__text">
+                Принимаем заявки на доклады до 1 февраля 2026
+              </div>
+            </div>
+            <div class="suggest__btn">
+              <a target="_blank" href="https://docs.google.com/forms/d/1WxlttLgJCwTJfML0muj2-nxAobVD_j08Vk5BAnLQ9js/preview" class="btn">Предложить тему</a>
+            </div>
+          </div>
       {% for speaker in speakers %}
         <div class="speaker" id="{{speaker.id}}">
           <div class="speaker__top">
@@ -144,19 +57,7 @@
           </div>
         </div>
       {% endfor %}
-      <div class="suggest">
-        <div class="suggest__content">
-          <h4 class="suggest__title">Эй. Псс...
-            <br>
-            Есть о чем рассказать?</h4>
-          <div class="suggest__text">
-            Принимаем предложения до 23 марта 2026
-          </div>
-        </div>
-        <div class="suggest__btn">
-          <a href="#" class="btn">Предложить тему</a>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
