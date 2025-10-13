@@ -107,6 +107,10 @@
       line-height: 1.1;
     }
   }
+  &__subtitle {
+    text-align: center;
+    padding-top: 12px;
+  }
   &__buttons {
     display: flex;
     flex-wrap: wrap;

@@ -785,6 +785,10 @@ body {
     line-height: 1.1;
   }
 }
+.hero__subtitle {
+  text-align: center;
+  padding-top: 12px;
+}
 .hero__buttons {
   display: flex;
   flex-wrap: wrap;
