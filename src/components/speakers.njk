@@ -1,44 +1,54 @@
-{% set speakers = [{
-                       id: "speaker-aleks-solovyov",
-                       name: "Александр Соловьев",
-                       company: "Refocus, Испания",
-                       topic: "Постоянный герой страниц Forbes, 15 млн $ выручки в первый год работы стартапа",
-                       image: "speaker2",
-                       social: [
-                         { name: "тг", label: "Телеграм", url: "https://t.me/solokumi" }
-                       ]
-                     }
-                     ,{
-                               id: "speaker-lex",
-                               name: "Лекс Картынник aka IT Beard",
-                               company: "Evocoders, Польша",
-                               topic: "Инженер, популярный IT автор, основатель клуба EvoCoders. Тема доклада: Как ИИ меняет индустрию и профессию разработчика",
-                               image: "speaker4",
-                               social: [
-                                 { name: "ютуб", label: "Ютуб", url: "https://www.youtube.com/itbeard" }
-                               ]
-                             }
- ,
-{
+{% set speakers = [
+  {
+    id: "speaker-oxana-raim",
+    name: "Оксана Раим",
+    company: "Raison Fintech, Испания",
+    topic: "Ex-Anthropic advisor, Space X, Neurolink. BizDev-стратег из мира финтеха и AI. Из Казахстана — в топ мирового бизнеса",
+    image: "speaker5",
+    social: [
+      { name: "in", label: "LinkedIn", url: "https://www.linkedin.com/in/oxana-raim-a7a73a52/" }
+    ]
+  },
+  {
+    id: "speaker-lex",
+    name: "Лекс Картынник aka IT Beard",
+    company: "Evocoders, Польша",
+    topic: "Инженер, популярный IT автор, основатель клуба EvoCoders. Тема доклада: Как ИИ меняет индустрию и профессию разработчика",
+    image: "speaker4",
+    social: [
+      { name: "ютуб", label: "Ютуб", url: "https://www.youtube.com/itbeard" }
+    ]
+  },
+    {
+      id: "speaker-aleks-solovyov",
+      name: "Александр Соловьев",
+      company: "Refocus, Испания",
+      topic: "Постоянный герой страниц Forbes, 15 млн $ выручки в первый год работы стартапа",
+      image: "speaker2",
+      social: [
+        { name: "тг", label: "Телеграм", url: "https://t.me/solokumi" }
+      ]
+    },
+  {
     id: "speaker-anna-znamenskaya",
     name: "Анна Знаменская",
     company: "Карьерный консультант, Испания",
-    topic: "Топ менеджер с 20 летним стажем, работала в Apple, Viber, Tinkoff, Beeline, Ivi. Доклад: Из СНГ в FAANG - как построить IT карьеру в Европе? ",
+    topic: "Топ менеджер с 20 летним стажем, работала в Apple, Viber, Tinkoff, Beeline, Ivi. Доклад: Из СНГ в FAANG - как построить IT карьеру в Европе?",
     image: "speaker1",
     social: [
       { name: "инст", label: "Инстаграм", url: "https://www.instagram.com/annaznamenskaya/" }
     ]
+  },
+  {
+    id: "speaker-alex-belov",
+    name: "Алекс Белов",
+    company: "Coinstelegram, UAE",
+    topic: "Forbes 30 under 30, журналист @coinstelegram, Web3 инвестор. Доклад: Регуляция в Европе / Перспективы крипто рынка / DeFi протоколы, хайп prediction markets",
+    image: "speaker3",
+    social: [
+      { name: "инст", label: "Инстаграм", url: "https://www.instagram.com/alex_belov13/" }
+    ]
   }
-  ,{
-      id: "speaker-alex-belov",
-      name: "Алекс Белов",
-      company: "Coinstelegram, UAE",
-      topic: "Forbes 30 under 30, журналист @coinstelegram, Web3 инвестор. Доклад: Регуляция в Европе / Перспективы крипто рынка / DeFi протоколы, хайп prediction markets",
-      image: "speaker3",
-      social: [
-        { name: "инст", label: "Инстаграм", url: "https://www.instagram.com/alex_belov13/" }
-      ]
-    }
 ] %}
 
 <section class="section section_speakers" id="speakers">
@@ -47,18 +57,17 @@
       <h2 class="title">Первые подтверждённые спикеры
     </div>
     <div class="speakers-grid">
-    <div class="suggest">
-            <div class="suggest__content">
-              <h4 class="suggest__title">
-                Есть о чем рассказать?</h4>
-              <div class="suggest__text">
-                Принимаем заявки на доклады до 15 июля 2026
-              </div>
-            </div>
-            <div class="suggest__btn">
-              <a target="_blank" href="https://docs.google.com/forms/d/1WxlttLgJCwTJfML0muj2-nxAobVD_j08Vk5BAnLQ9js/preview" class="btn">Предложить тему</a>
-            </div>
+      <div class="suggest">
+        <div class="suggest__content">
+          <h4 class="suggest__title">Есть о чем рассказать?</h4>
+          <div class="suggest__text">
+            Принимаем заявки на доклады до 15 июля 2026
           </div>
+        </div>
+        <div class="suggest__btn">
+          <a target="_blank" href="https://docs.google.com/forms/d/1WxlttLgJCwTJfML0muj2-nxAobVD_j08Vk5BAnLQ9js/preview" class="btn">Предложить тему</a>
+        </div>
+      </div>
       {% for speaker in speakers %}
         <div class="speaker" id="{{speaker.id}}">
           <div class="speaker__top">
@@ -78,7 +87,6 @@
           </div>
         </div>
       {% endfor %}
-
     </div>
   </div>
 </section>
