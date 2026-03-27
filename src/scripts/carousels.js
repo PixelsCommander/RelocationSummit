@@ -82,7 +82,9 @@ function initEmblaTopics() {
   if (window.innerWidth < 768) return;
 
   const baseOptions = {
-    loop: true,
+    loop: false,
+    align: "start",
+    containScroll: "trimSnaps",
     dragFree: false,
   };
 
@@ -96,17 +98,34 @@ function initEmblaTopics() {
   // Default topics carousel (left-to-right)
   const defaultContainer = document.querySelector(".embla_topics_default");
   if (defaultContainer) {
+    const defaultAutoScroll = AutoScroll({
+      ...autoScrollConfig,
+      direction: "forward",
+    });
     carousels.topicsDefault = EmblaCarousel(defaultContainer, baseOptions, [
-      AutoScroll({ ...autoScrollConfig, speed: 1 }),
+      defaultAutoScroll,
     ]);
   }
 
   // Reversed topics carousel (right-to-left)
   const reversedContainer = document.querySelector(".embla_topics_reversed");
   if (reversedContainer) {
+    const reversedAutoScroll = AutoScroll({
+      ...autoScrollConfig,
+      direction: "backward",
+      playOnInit: false,
+    });
     carousels.topicsReversed = EmblaCarousel(reversedContainer, baseOptions, [
-      AutoScroll({ ...autoScrollConfig, speed: -1 }),
+      reversedAutoScroll,
     ]);
+
+    const lastSnapIndex = carousels.topicsReversed.scrollSnapList().length - 1;
+
+    if (lastSnapIndex > 0) {
+      carousels.topicsReversed.scrollTo(lastSnapIndex, true);
+    }
+
+    reversedAutoScroll.play();
   }
 }
 
