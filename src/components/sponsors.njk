@@ -1,42 +1,50 @@
 {% set sponsorTiers = [
-  {
-    tier: "partners",
-    title: "Партнеры",
-    sponsors: [
-      {
-        name: "IT Connect Белград",
-        logo: "itconnect",
-        url: "https://www.itconnect.community/"
-      },
-      {
-        name: "BCN IT Hub",
-        logo: "bcn-it-hub",
-        url: "https://t.me/bcn_ithub"
-      }
+    {
+        tier: "partners",
+        title: "Партнеры",
+        sponsors: [
+        {
+            name: "IT Connect Белград",
+            logo: "itconnect",
+            url: "https://www.itconnect.community/"
+        },
+        {
+            name: "Yellow Rocks! Venture Capital",
+            logo: "yr",
+            url: "https://yellowrocks.vc/"
+        },
+        {
+            name: "BCN IT Hub",
+            logo: "bcn-it-hub",
+            url: "https://t.me/bcn_ithub"
+        }
     ]
-  }
+    }
 ] %}
 
 <section class="section section_sponsors" id="sponsors">
-  <div class="container">
-    <div class="section__caption">
-      <h2 class="title">Спонсоры</h2>
-    </div>
-    <div class="sponsors-container">
-      {% for tierData in sponsorTiers %}
-        <div class="sponsors sponsors_{{ tierData.tier }}">
-          <h2 class="sponsors__title">{{ tierData.title }}</h2>
-          <ul class="sponsors__list">
-            {% for sponsor in tierData.sponsors %}
-              <li class="sponsors__item">
-                <a href="{{ sponsor.url }}" target="_blank" rel="noopener noreferrer" aria-label="Посетить сайт {{ sponsor.name }}" class="sponsors__link">
-                  <img src="assets/img/sponsors/{{ sponsor.logo }}.webp" srcset="assets/img/sponsors/{{ sponsor.logo }}@2x.webp 2x" alt="{{ sponsor.name }}" class="sponsors__logo">
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
+    <div class="container">
+        <div class="section__caption">
+            <h2 class="title">Спонсоры</h2>
         </div>
-      {% endfor %}
+        <div class="sponsors-container">
+            {% for tierData in sponsorTiers %}
+                <div class="sponsors sponsors_{{ tierData.tier }}">
+                    <h2 class="sponsors__title">{{ tierData.title }}</h2>
+                    <ul class="sponsors__list">
+                        {% for sponsor in tierData.sponsors %}
+                            <li class="sponsors__item">
+                                <a href="{{ sponsor.url }}" target="_blank" rel="noopener noreferrer"
+                                   aria-label="Посетить сайт {{ sponsor.name }}" class="sponsors__link">
+                                    <img src="assets/img/sponsors/{{ sponsor.logo }}.webp"
+                                         srcset="assets/img/sponsors/{{ sponsor.logo }}@2x.webp 2x"
+                                         alt="{{ sponsor.name }}" class="sponsors__logo">
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
     </div>
-  </div>
 </section>
