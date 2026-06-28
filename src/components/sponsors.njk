@@ -13,7 +13,8 @@
                 {
                     name: "4Dev",
                     logo: "4dev",
-                    url: "https://4dev.com/"
+                    url: "https://4dev.com/",
+                    description: "B2B-платформа для управления международными подрядчиками и документацией"
                 }
             ]
         },
@@ -24,7 +25,8 @@
         {
             name: "Around PR",
             logo: "around",
-            url: "https://around-pr.studio/"
+            url: "https://around-pr.studio/",
+            description: "Бутиковое PR-агентство для технологических стартапов и венчурных фондов. Партнер саммита."
         },
         {
             name: "IT Connect Белград",
@@ -78,6 +80,9 @@
                                     <img src="assets/img/sponsors/{{ sponsor.logo }}.webp"
                                          srcset="assets/img/sponsors/{{ sponsor.logo }}@2x.webp 2x"
                                          alt="{{ sponsor.name }}" class="sponsors__logo">
+                                    {% if sponsor.description %}
+                                        <span class="sponsors__description">{{ sponsor.description }}</span>
+                                    {% endif %}
                                 </a>
                             </li>
                         {% endfor %}
