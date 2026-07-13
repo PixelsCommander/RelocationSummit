@@ -1,0 +1,63 @@
+{% set ambassadors = [
+    {
+        id: "ambassador-alice-kurtz",
+        name: "Алиса Курц",
+        company: "ITGIRLS, Португалия",
+        topic: "Айтишница, блогер и фаундер карьерной школы",
+        image: "alice-kurtz",
+        social: [
+        { name: "инст", label: "Инстаграм", url: "https://www.instagram.com/aliceitgirl" }
+    ]
+    },
+    {
+        id: "ambassador-anna-levin",
+        name: "Анна Левин",
+        company: "Senior HR Operations, Израиль",
+        topic: "Более 11 лет опыта как HR в топовых компаниях (Deloitte, IBM, Kyndryl, Herzog). Консультирует по найму, карьере и трудовому праву в Израиле",
+        image: "anna-levin",
+        social: [
+        { name: "инст", label: "Инстаграм", url: "https://www.instagram.com/anna.levin__hr/" }
+    ]
+    },
+    {
+        id: "ambassador-dmitry-kalinin",
+        name: "Дмитрий Калинин",
+        company: "WESTART Fund & Community, Польша",
+        topic: "PhD, эксперт по фандрайзингу tech-стартапов. Сделки на $27M+",
+        image: "dmitry-kalinin",
+        social: [
+        { name: "инст", label: "Инстаграм", url: "https://www.instagram.com/kalinin.dzmitry/" },
+        { name: "тг", label: "Telegram", url: "https://t.me/westart_community" }
+    ]
+    }
+] %}
+
+<section class="section section_ambassadors" id="ambassadors">
+    <div class="container">
+        <div class="section__caption">
+            <h2 class="title">Амбассадоры саммита
+        </div>
+        <div class="speakers-grid">
+            {% for ambassador in ambassadors %}
+                <div class="speaker" id="{{ ambassador.id }}">
+                    <div class="speaker__top">
+                        <img src="assets/img/{{ ambassador.image }}.webp" alt="{{ ambassador.name }}" class="speaker__photo">
+                        <div class="speaker__social">
+                            {% for social in ambassador.social %}
+                                <a href="{{ social.url }}" class="speaker__social-btn" target="_blank"
+                                   aria-label="Перейти на аккаунт {{ ambassador.name }} в {{ social.label }}">
+                                    {{ social.name }}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="speaker__content">
+                        <h3 class="speaker__name">{{ ambassador.name }}</h3>
+                        <div class="speaker__company">{{ ambassador.company }}</div>
+                        <div class="speaker__topic">{{ ambassador.topic }}</div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
