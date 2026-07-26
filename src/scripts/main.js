@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
   import("./nav.js");
   import("./sticky-header.js");
   import("./carousels.js");
+  import("./price-banner.js").then(({ default: initializePriceBanner }) => {
+    initializePriceBanner();
+  });
 });
 
 const observer = new MutationObserver(() => {
