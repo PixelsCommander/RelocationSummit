@@ -45,7 +45,7 @@ const formatTimeLeft = (milliseconds) => {
   const seconds = totalSeconds % 60;
   const pad = (value) => String(value).padStart(2, "0");
 
-  return `${days} дней ${pad(hours)} часов ${pad(minutes)} минут ${pad(seconds)} секунд`;
+  return `${days} д ${pad(hours)} ч ${pad(minutes)} м ${pad(seconds)} с`;
 };
 
 const initializePriceBanner = () => {
