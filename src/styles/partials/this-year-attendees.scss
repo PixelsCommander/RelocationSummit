@@ -1,0 +1,48 @@
+@use "../helpers/media";
+
+.this-year-attendees {
+  padding: 20px 0 60px;
+  overflow: hidden;
+
+  @include media.md-up {
+    padding: 30px 0 80px;
+  }
+
+  @include media.xl-up {
+    padding: 40px 0 100px;
+  }
+
+  &__title {
+    margin: 0 auto;
+    max-width: 1208px;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.1;
+    text-align: center;
+    color: var(--font-color-base);
+
+    @include media.md-up {
+      font-size: 26px;
+    }
+
+    @include media.xl-up {
+      font-size: 28px;
+    }
+  }
+
+  &__countries {
+    display: block;
+    width: 100%;
+    max-width: 1155px;
+    height: auto;
+    margin: 32px auto 0;
+
+    @include media.md-up {
+      margin-top: 50px;
+    }
+
+    @include media.xl-up {
+      margin-top: 68px;
+    }
+  }
+}
