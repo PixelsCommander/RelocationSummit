@@ -1,4 +1,7 @@
 <div class="ticket">
+  {% if ticket.promo %}
+    <div class="ticket__promo">{{ ticket.promo }}</div>
+  {% endif %}
   <div class="ticket__title">{{ticket.title}}</div>
   <div class="ticket__price">{{ticket.price}}</div>
 

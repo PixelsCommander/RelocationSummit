@@ -71,6 +71,7 @@
 }
 
 .ticket {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -83,6 +84,25 @@
   &:hover {
     @include media.lg-up {
       transform: scale(1.05);
+    }
+  }
+
+  &__promo {
+    align-self: stretch;
+    margin: -28px 6px 24px;
+    padding: 10px 12px;
+    border-radius: calc(var(--border-radius) / 2);
+    background: linear-gradient(105deg, #ff3d81 0%, #ff7a18 100%);
+    box-shadow: 0 8px 24px rgba(255, 61, 129, 0.3);
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.25;
+    text-align: center;
+    text-wrap: balance;
+
+    @include media.xl-up {
+      font-size: 16px;
     }
   }
 
