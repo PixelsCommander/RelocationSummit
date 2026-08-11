@@ -1,32 +1,7 @@
-const DISMISS_STORAGE_KEY = "priceBannerDismissedUntil";
+const DISMISS_STORAGE_KEY = "priceBannerSep5DismissedUntil";
 const DISMISS_DURATION_MS = 3 * 24 * 60 * 60 * 1000;
 const DISPLAY_WINDOW_MS = 7 * 24 * 60 * 60 * 1000;
-
-const getDeadline = (now) => {
-  const currentMonthDeadline = new Date(
-    now.getFullYear(),
-    now.getMonth(),
-    1,
-    23,
-    0,
-    0,
-    0
-  );
-
-  if (now <= currentMonthDeadline) {
-    return currentMonthDeadline;
-  }
-
-  return new Date(
-    now.getFullYear(),
-    now.getMonth() + 1,
-    1,
-    23,
-    0,
-    0,
-    0
-  );
-};
+const PRICE_INCREASE_DEADLINE = new Date(2026, 8, 5, 23, 0, 0, 0);
 
 const wasRecentlyDismissed = (now) => {
   try {
@@ -53,7 +28,7 @@ const initializePriceBanner = () => {
   if (!banner) return;
 
   const now = new Date();
-  const deadline = getDeadline(now);
+  const deadline = PRICE_INCREASE_DEADLINE;
   const timeLeft = deadline.getTime() - now.getTime();
 
   if (
