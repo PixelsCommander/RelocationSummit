@@ -7,7 +7,7 @@
 
 {% set sponsorTiers = [
         {
-            tier: "golden",
+            tier: "gold",
             title: "Золотые спонсоры",
             sponsors: [
                 {
@@ -15,6 +15,11 @@
                     logo: "4dev",
                     url: "https://4dev.com/",
                     description: "B2B-платформа для управления международными подрядчиками и документацией"
+                },
+                {
+                    name: "V3V",
+                    logo: "v3v",
+                    url: "https://v3v.xyz"
                 }
             ]
         },
@@ -26,6 +31,11 @@
                 name: "Hit Hunt",
                 logo: "hithunt",
                 url: "https://hit-hunt.com/en"
+            },
+            {
+                name: "Colibrix One",
+                logo: "colibrix-one",
+                url: "https://colibrix.one/"
             }
         ]
     },
@@ -106,7 +116,7 @@
                                    aria-label="Посетить сайт {{ sponsor.name }}" class="sponsors__link">
                                     <img src="assets/img/sponsors/{{ sponsor.logo }}.webp"
                                          srcset="assets/img/sponsors/{{ sponsor.logo }}@2x.webp 2x"
-                                         alt="{{ sponsor.name }}" class="sponsors__logo">
+                                         alt="{{ sponsor.name }}" class="sponsors__logo{% if sponsor.logo == 'v3v' %} sponsors__logo_v3v{% endif %}{% if sponsor.logo == 'colibrix-one' %} sponsors__logo_colibrix-one{% endif %}">
                                     {% if sponsor.description %}
                                         <span class="sponsors__description">{{ sponsor.description }}</span>
                                     {% endif %}

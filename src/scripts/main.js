@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
   import("./price-banner.js").then(({ default: initializePriceBanner }) => {
     initializePriceBanner();
   });
+  import("./organizers-dialog.js").then(({ default: initializeOrganizersDialog }) => {
+    initializeOrganizersDialog();
+  });
 });
 
 const observer = new MutationObserver(() => {

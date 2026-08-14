@@ -17,7 +17,7 @@
 <footer class="footer">
   <div class="footer__inner container">
     <div class="footer__base">
-      <a href="https://t.me/bcn_ithub" class="footer__organizers-link" target="_blank">организаторы</a>
+      <button class="footer__organizers-link" type="button" data-organizers-open>организаторы</button>
     </div>
     <div class="footer__side">
       <ul class="social social_footer">
@@ -28,3 +28,38 @@
     </div>
   </div>
 </footer>
+
+<dialog class="organizers-dialog" data-organizers-dialog aria-labelledby="organizers-dialog-title">
+  <div class="organizers-dialog__inner">
+    <div class="organizers-dialog__header">
+      <h2 class="organizers-dialog__title" id="organizers-dialog-title">Организаторы</h2>
+      <button class="organizers-dialog__close" type="button" data-organizers-close aria-label="Закрыть окно">
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <div class="organizers-dialog__grid">
+      <article class="organizer-card">
+        <div class="organizer-card__portrait">
+          <img class="organizer-card__photo" src="assets/img/organizer-irina.jpg" alt="Ирина Байгозина">
+        </div>
+        <div class="organizer-card__content">
+          <h3 class="organizer-card__name">Ирина Байгозина</h3>
+          <p class="organizer-card__company">Founder Hit Hunt и BCN IT HUB</p>
+          <a class="organizer-card__link" href="https://www.linkedin.com/in/irina-baigozina-9088b880/" target="_blank" rel="noopener noreferrer" aria-label="Профиль Ирины Байгозиной в LinkedIn">LinkedIn</a>
+        </div>
+      </article>
+
+      <article class="organizer-card">
+        <div class="organizer-card__portrait">
+          <img class="organizer-card__photo" src="assets/img/organizer-denis.jpg" alt="Денис Радин">
+        </div>
+        <div class="organizer-card__content">
+          <h3 class="organizer-card__name">Денис Радин</h3>
+          <p class="organizer-card__company">Co-Founder GitNation, FocusReactive</p>
+          <a class="organizer-card__link" href="https://www.linkedin.com/in/denisradin/" target="_blank" rel="noopener noreferrer" aria-label="Профиль Дениса Радина в LinkedIn">LinkedIn</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</dialog>

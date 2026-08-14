@@ -176,6 +176,14 @@
     @include media.xl-up {
       max-height: 100%;
     }
+
+    &_v3v {
+      max-width: 70%;
+    }
+
+    &_colibrix-one {
+      transform: scale(0.7);
+    }
   }
   &__description {
     max-width: 280px;
