@@ -1,7 +1,7 @@
-const DISMISS_STORAGE_KEY = "priceBannerSep5DismissedUntil";
+const DISMISS_STORAGE_KEY = "priceBannerSep10DismissedUntil";
 const DISMISS_DURATION_MS = 3 * 24 * 60 * 60 * 1000;
-const DISPLAY_WINDOW_MS = 7 * 24 * 60 * 60 * 1000;
-const PRICE_INCREASE_DEADLINE = new Date(2026, 8, 5, 23, 0, 0, 0);
+const DISPLAY_WINDOW_MS = 15 * 24 * 60 * 60 * 1000;
+const PRICE_INCREASE_DEADLINE = new Date(2026, 8, 10, 23, 0, 0, 0);
 
 const wasRecentlyDismissed = (now) => {
   try {
