@@ -64,6 +64,43 @@
     height: 100%;
     object-fit: cover;
   }
+  &__track {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 1;
+    max-width: calc(100% - 16px);
+    padding: 4px 6px;
+    border: 1px solid rgba(var(--yellow-rgb), 0.25);
+    border-radius: 6px;
+    background-color: rgba(15, 22, 8, 0.4);
+    color: var(--primary-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    font-size: 9px;
+    font-weight: 600;
+    line-height: 1.35;
+    text-wrap: balance;
+    text-align: right;
+    pointer-events: none;
+
+    &--business {
+      color: #e9ddff;
+      border-color: rgba(203, 173, 255, 0.25);
+      background-color: rgba(35, 19, 52, 0.4);
+    }
+
+    @include media.sm-up {
+      top: 12px;
+      right: 12px;
+      max-width: calc(100% - 24px);
+      padding: 5px 8px;
+      font-size: 10px;
+    }
+    @include media.xxl-up {
+      font-size: 11px;
+    }
+  }
   &__social {
     position: relative;
     display: flex;
