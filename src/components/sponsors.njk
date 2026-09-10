@@ -20,6 +20,13 @@
                     name: "V3V",
                     logo: "v3v",
                     url: "https://v3v.xyz"
+                },
+                {
+                    name: "Андрей Румянцев",
+                    logo: "arumyancev",
+                    logoSvg: true,
+                    url: "https://andreyr.com",
+                    description: "Предприниматель и консультант"
                 }
             ]
         },
@@ -120,9 +127,14 @@
                             <li class="sponsors__item">
                                 <a href="{{ sponsor.url }}" target="_blank" rel="noopener noreferrer"
                                    aria-label="Посетить сайт {{ sponsor.name }}" class="sponsors__link">
+                                    {% if sponsor.logoSvg %}
+                                    <img src="assets/img/sponsors/{{ sponsor.logo }}.svg"
+                                         alt="{{ sponsor.name }}" class="sponsors__logo">
+                                    {% else %}
                                     <img src="assets/img/sponsors/{{ sponsor.logo }}.webp"
                                          srcset="assets/img/sponsors/{{ sponsor.logo }}@2x.webp 2x"
                                          alt="{{ sponsor.name }}" class="sponsors__logo{% if sponsor.logo == 'v3v' %} sponsors__logo_v3v{% endif %}{% if sponsor.logo == 'colibrix-one' %} sponsors__logo_colibrix-one{% endif %}">
+                                    {% endif %}
                                     {% if sponsor.description %}
                                         <span class="sponsors__description">{{ sponsor.description }}</span>
                                     {% endif %}
