@@ -200,6 +200,11 @@
       max-width: 70%;
     }
 
+    &_kit-group {
+      width: 240px;
+      filter: invert(1);
+    }
+
     &_colibrix-one {
       transform: scale(0.7);
     }

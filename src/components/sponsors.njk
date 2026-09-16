@@ -77,6 +77,12 @@
                 name: "Colibrix One",
                 logo: "colibrix-one",
                 url: "https://colibrix.one/"
+            },
+            {
+                name: "KIT Global",
+                logo: "kit-group",
+                logoPng: true,
+                url: "https://kit.global/"
             }
         ]
     },
@@ -141,7 +147,7 @@
                                    aria-label="Посетить сайт {{ sponsor.name }}" class="sponsors__link">
                                     {% if sponsor.logoPng %}
                                     <img src="assets/img/sponsors/{{ sponsor.logo }}.png"
-                                         alt="{{ sponsor.name }}" class="sponsors__logo sponsors__logo_century21">
+                                         alt="{{ sponsor.name }}" class="sponsors__logo sponsors__logo_{{ sponsor.logo }}">
                                     {% elif sponsor.logoSvg %}
                                     <img src="assets/img/sponsors/{{ sponsor.logo }}.svg"
                                          alt="{{ sponsor.name }}" class="sponsors__logo">
