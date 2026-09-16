@@ -10,11 +10,12 @@
 
 {% set tickets = [
         {
-          title: "Билет на вечеринку",
-          price: "€40",
-          icon: 'fire',
+          title: "Билет на один день",
+          price: "€99",
+          icon: 'diamond',
           description: [
-                      "Повышение цены 25 сентября"
+                      "9 октября",
+                      "+ Все активности дня"
                     ],
           buttonLink: 'https://www.eventbrite.es/e/relocation-it-summit-2026-tickets-1992993908430'
         },
@@ -25,8 +26,7 @@
           promo: "Командные билеты: −20% от 3 участников",
           description: [
                       "+ Проход на вечеринку",
-                      "+ Все активности кроме нетворкинг ужина",
-                      "Повышение цены 25 сентября"
+                      "+ Все активности кроме нетворкинг ужина"
                     ],
           buttonLink: 'https://www.eventbrite.es/e/relocation-it-summit-2026-tickets-1992993908430'
         },
@@ -38,6 +38,12 @@
             "+ Нетворкинг ужин", "+ Доступ в чат Re:Locate Business", "+ Регистрация без очереди", "+ Выступление в питч вечере"
           ],
           buttonLink: 'https://www.eventbrite.es/e/relocation-it-summit-2026-tickets-1992993908430'
+        },
+        {
+          title: "Билет на вечеринку",
+          price: "€40",
+          icon: 'fire',
+          buttonLink: 'https://www.eventbrite.es/e/relocation-it-summit-2026-tickets-1992993908430'
         }
       ] %}
 
@@ -45,6 +51,7 @@
   <div class="container">
     <div class="section__caption">
       <h2 class="title">Билеты</h2>
+      <p class="tickets-subtitle">Повышение цены 25 сентября</p>
     </div>
     <div class="embla embla_tickets">
       <div class="embla__container">

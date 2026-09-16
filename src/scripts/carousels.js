@@ -133,7 +133,7 @@ function initEmblaTopics() {
 function initEmblaTickets() {
   destroyCarousel("tickets");
 
-  if (window.innerWidth < 576 || window.innerWidth > 991) return;
+  if (window.innerWidth >= 1200) return;
 
   const container = document.querySelector(".embla_tickets");
   if (!container) return;

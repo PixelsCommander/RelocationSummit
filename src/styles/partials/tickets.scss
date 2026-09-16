@@ -1,71 +1,48 @@
 @use "../helpers/media";
 
-.embla {
-  &_tickets {
-    &.embla {
-      @media (min-width: 576px) and (max-width: 991px) {
-        overflow: hidden;
-        margin: 0 calc(-1 * var(--container-padding-x));
-      }
+.tickets-subtitle {
+  margin: 16px 0 0;
+  text-align: center;
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.4;
+  color: var(--primary-color);
+}
 
-      .embla {
-        &__container {
-          display: grid;
-          gap: 8px;
+// Four cards on desktop; swipe through the same row on smaller screens.
+.embla_tickets {
+  @include media.xl-down {
+    overflow: hidden;
+    margin: 0 calc(-1 * var(--container-padding-x));
+  }
 
-          @media (min-width: 576px) and (max-width: 991px) {
-            display: flex;
-            gap: 0;
-            padding: 0 var(--container-padding-x);
-          }
-          @include media.lg-up {
-            grid-template-columns: repeat(3, 1fr);
-            max-width: 986px;
-            margin: 0 auto;
-            gap: 22px;
-          }
-          @include media.xxl-up {
-            gap: 28px;
-          }
-        }
-        &__slide {
-          @media (min-width: 701px) and (max-width: 991px) {
-            display: flex;
-            flex-direction: column;
-            min-width: 0;
-            flex: 1;
-            flex: 0 0 47%;
-          }
-          @media (min-width: 576px) and (max-width: 700px) {
-            flex: 0 0 94%;
-          }
+  .embla__container {
+    display: flex;
+    gap: 16px;
+    touch-action: pan-y pinch-zoom;
 
-          &:not(:first-child) {
-            @media (min-width: 576px) and (max-width: 991px) {
-              flex-basis: calc(47% + var(--container-padding-x));
-              padding-left: var(--container-padding-x);
-              margin-left: -10px;
-            }
-            @media (min-width: 576px) and (max-width: 700px) {
-              flex-basis: calc(94% + var(--container-padding-x));
-            }
-          }
+    @include media.xl-down {
+      padding: 0 var(--container-padding-x);
+    }
 
-          &:last-child {
-            @media (min-width: 576px) and (max-width: 991px) {
-              margin-right: var(--container-padding-x);
-            }
-          }
+    @include media.xl-up {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      max-width: 1106px;
+      margin: 0 auto;
+      gap: 22px;
+    }
 
-          .ticket {
-            height: 100%;
+    @include media.xxl-up {
+      gap: 28px;
+    }
+  }
 
-            @media (min-width: 576px) and (max-width: 991px) {
-              user-select: none;
-            }
-          }
-        }
-      }
+  .embla__slide {
+    min-width: 0;
+    flex: 0 0 min(80%, 260px);
+
+    .ticket {
+      height: 100%;
     }
   }
 }
@@ -82,7 +59,7 @@
   transition: transform var(--transition-default);
 
   &:hover {
-    @include media.lg-up {
+    @include media.xl-up {
       transform: scale(1.05);
     }
   }
