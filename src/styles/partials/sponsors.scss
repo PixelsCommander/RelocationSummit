@@ -111,6 +111,25 @@
           max-height: 100%;
           max-width: 100%;
         }
+
+        &_century21 {
+          width: 124px;
+          height: 70px;
+          max-width: 100%;
+          max-height: none;
+          object-fit: cover;
+          object-position: center 43%;
+
+          @include media.md-up {
+            width: 170px;
+            height: 96px;
+          }
+
+          @include media.xl-up {
+            width: 280px;
+            height: 158px;
+          }
+        }
       }
     }
   }

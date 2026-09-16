@@ -50,6 +50,12 @@
                 logo: "betby",
                 logoSvg: true,
                 url: "https://betby.com/"
+            },
+            {
+                name: "CENTURY 21 Zona Alta",
+                logo: "century21",
+                logoPng: true,
+                url: "https://www.century21.es/agencias/zonaalta"
             }
         ]
     },
@@ -133,7 +139,10 @@
                             <li class="sponsors__item">
                                 <a href="{{ sponsor.url }}" target="_blank" rel="noopener noreferrer"
                                    aria-label="Посетить сайт {{ sponsor.name }}" class="sponsors__link">
-                                    {% if sponsor.logoSvg %}
+                                    {% if sponsor.logoPng %}
+                                    <img src="assets/img/sponsors/{{ sponsor.logo }}.png"
+                                         alt="{{ sponsor.name }}" class="sponsors__logo sponsors__logo_century21">
+                                    {% elif sponsor.logoSvg %}
                                     <img src="assets/img/sponsors/{{ sponsor.logo }}.svg"
                                          alt="{{ sponsor.name }}" class="sponsors__logo">
                                     {% else %}
