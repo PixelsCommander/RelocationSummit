@@ -106,6 +106,12 @@
             logo: "noticia",
             url: "https://t.me/noticiaru"
         },
+        {
+            name: "Noticasa",
+            logo: "noticasa",
+            logoJpg: true,
+            url: "https://noticasa.es/"
+        },
       {
           name: "Bur",
           logo: "bur",
@@ -145,7 +151,10 @@
                             <li class="sponsors__item">
                                 <a href="{{ sponsor.url }}" target="_blank" rel="noopener noreferrer"
                                    aria-label="Посетить сайт {{ sponsor.name }}" class="sponsors__link">
-                                    {% if sponsor.logoPng %}
+                                    {% if sponsor.logoJpg %}
+                                    <img src="assets/img/sponsors/{{ sponsor.logo }}.jpg"
+                                         alt="{{ sponsor.name }}" class="sponsors__logo sponsors__logo_{{ sponsor.logo }}">
+                                    {% elif sponsor.logoPng %}
                                     <img src="assets/img/sponsors/{{ sponsor.logo }}.png"
                                          alt="{{ sponsor.name }}" class="sponsors__logo sponsors__logo_{{ sponsor.logo }}">
                                     {% elif sponsor.logoSvg %}
