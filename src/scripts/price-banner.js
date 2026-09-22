@@ -1,6 +1,6 @@
 const DISMISS_STORAGE_KEY = "priceBannerSep15DismissedUntil";
 const DISMISS_DURATION_MS = 3 * 24 * 60 * 60 * 1000;
-const DISPLAY_WINDOW_MS = 20 * 24 * 60 * 60 * 1000;
+const DISPLAY_START = new Date(2026, 8, 24, 0, 0, 0, 0);
 const PRICE_INCREASE_DEADLINE = new Date(2026, 9, 1, 23, 0, 0, 0);
 
 const wasRecentlyDismissed = (now) => {
@@ -33,7 +33,7 @@ const initializePriceBanner = () => {
 
   if (
     timeLeft <= 0 ||
-    timeLeft > DISPLAY_WINDOW_MS ||
+    now < DISPLAY_START ||
     wasRecentlyDismissed(now)
   ) {
     return;
