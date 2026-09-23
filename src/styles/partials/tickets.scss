@@ -1,5 +1,13 @@
 @use "../helpers/media";
 
+.tickets-footnote {
+  max-width: 1106px;
+  margin: 24px auto 0;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
 .tickets-subtitle {
   margin: 16px 0 0;
   text-align: center;
